@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="todo.html">Todo List</a></li>
+            <li><a href="#" id="logoutButton">LogOut</a></li>
+        </ul>
+    </nav>
+</body>
+<script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+        // Redirect to the login page
+        window.location.href = 'index.html';
+    });
+</script>
+</html>
