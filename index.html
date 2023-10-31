@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button type="button" id="loginButton">Login</button>
+    </form>
+</body>
+<script>
+    document.getElementById('loginButton').addEventListener('click', function() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        // Check login credentials
+        if (username === 'admin' && password === '12345') {
+            // Redirect to the main page using a callback function
+            redirectToMainPage();
+        } else {
+            alert('Invalid credentials');
+        }
+    });
+
+    function redirectToMainPage() {
+        // Use window.location to redirect to the main page
+        window.location.href = 'main.html';
+    }
+</script>
+</html>
