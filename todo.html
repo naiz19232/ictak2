@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <div id="todoList"></div>
+</body>
+<script>
+    // Use Fetch API to retrieve tasks from the API
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => response.json())
+        .then(data => {
+            // Display tasks and track completed ones
+            var completedCount = 0;
+            var todoList = document.getElementById('todoList');
+            data.forEach(task => {
+                var taskItem = document.createElement('div');
+                taskItem.textContent = task.title;
+                if (task.completed) {
+                    taskItem.classList.add('completed');
+                    completedCount++;
+                }
+                todoList.appendChild(taskItem);
+            });
+
+            // Check if 5 tasks are completed
+            if (completedCount >= 5) {
+                alert(`Congrats. ${completedCount} Tasks have been Successfully Completed`);
+            }
+        })
+        .catch(error => console.error(error));
+</script>
+</html>
